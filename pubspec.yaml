@@ -1,0 +1,8 @@
+name: web_animations_playground
+version: 0.0.1
+author: Günter Zöchbauer
+description: Port of a JavaScript example found on https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/KF3Cwr_Kcl0
+environment:
+  sdk: '>=1.3.0'
+dependencies:
+  browser: '>=0.10.0+2<0.11.0'

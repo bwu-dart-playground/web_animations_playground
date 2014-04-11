@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      #target1 { top: 10px; }
+
+      #target2 { top: 220px; }
+
+      .target {
+        position: absolute;
+        left: 10px;
+        height: 200px;
+        font-size: 25px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='target' id='target1'>ANIMATION 1</div>
+    <div class='target' id='target2'>ANIMATION 2</div>
+
+    <script>
+      // Start an animation using Element.animate().
+      // After 2 iterations, change its playback direction to 'reverse'.
+      var target1 = document.getElementById('target1');
+      var animation1 = target1.animate(
+          [
+              {width: '200px', backgroundColor: 'green', offset: 0},
+              {width: '1000px', backgroundColor: 'cyan', offset: 1},
+          ],
+          {duration: 2, iterations: 4, fill: 'both'});
+
+      setTimeout(function() { animation1.specified.direction = 'reverse'; }, 4000);
+
+
+      // Create an animation using new Animation() and play it using document.timeline.play().
+      // After 2 iterations, change its timing function to steps(6, end).
+      // After 3 iterations, pause it.
+      var target2 = document.getElementById('target2');
+      var animation2 = new Animation(
+          target2,
+          [
+              {backgroundColor: 'red', width: '200px', offset: 0},
+              {backgroundColor: 'purple', offset: 0.3},
+              {backgroundColor: 'yellow', width: '1000px', offset: 1}
+          ],
+          {duration: 2, iterations: 4, fill: 'both'});
+      var player2 = document.timeline.play(animation2);
+      setTimeout(function() { player2.source.specified.easing = 'steps(6, end)'; }, 4000);
+      setTimeout(function() { player2.pause(); }, 6000);
+    </script>
+  </body>
+</html>
