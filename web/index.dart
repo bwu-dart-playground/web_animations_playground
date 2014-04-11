@@ -1,12 +1,10 @@
 import 'dart:async';
 import 'dart:html';
 
-@MirrorsUsed(targets: const [Object, Element], override: '*')
-import 'dart:mirrors';
+//@MirrorsUsed(targets: const [Object, Element], override: '*')
+//import 'dart:mirrors';
 
 void main() {
-//  var x = document.querySelector('script[myid=waves]');
-//  print(x.innerHtml);
   // Start an animation using Element.animate().
   // After 2 iterations, change its playback direction to 'reverse'.
   var target1 = document.getElementById('target1');
