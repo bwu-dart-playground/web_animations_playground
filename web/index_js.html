@@ -30,7 +30,7 @@
               {width: '200px', backgroundColor: 'green', offset: 0},
               {width: '1000px', backgroundColor: 'cyan', offset: 1},
           ],
-          {duration: 2, iterations: 4, fill: 'both'});
+          {duration: 2000, iterations: 4, fill: 'both'});
 
       setTimeout(function() { animation1.specified.direction = 'reverse'; }, 4000);
 
@@ -46,7 +46,7 @@
               {backgroundColor: 'purple', offset: 0.3},
               {backgroundColor: 'yellow', width: '1000px', offset: 1}
           ],
-          {duration: 2, iterations: 4, fill: 'both'});
+          {duration: 2000, iterations: 4, fill: 'both'});
       var player2 = document.timeline.play(animation2);
       setTimeout(function() { player2.source.specified.easing = 'steps(6, end)'; }, 4000);
       setTimeout(function() { player2.pause(); }, 6000);
